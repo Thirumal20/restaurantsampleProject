@@ -1,0 +1,115 @@
+<div class="page-container " ng-controller="acceptedOrdersCtrl">
+
+
+
+    <!-- Start page content wrapper -->
+    <div class="page-content-wrapper animated fadeInRight  ">
+        <div class="page-content">
+            <div class="row wrapper border-bottom page-heading">
+                <div class="col-lg-12">
+                    <h2> order Details</h2>
+                    <ol class="breadcrumb">
+                        <li> <a href="#/dashboard">order Details</a> </li>
+                        <li class="active"> <strong>Get order Details here</strong> </li>
+                    </ol>
+                </div>
+                <div class="col-lg-12"> </div>
+            </div>
+            <!-- :
+Item_cost: 60
+address: "hyd"
+gmail: "dfgsdfhsfh@gmail.com"
+id: 1
+item_name: "Zeera Rice"
+mobileno: "468798794"
+name: "dfgsdfhsfh"
+ord_its: "2021-02-02T11:05:38.000Z"
+order_din: 0
+order_status: 0
+quantity: 6 -->
+
+            <div class="widgets-container">
+                <div class="wrapper-content ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content collapse in">
+                                    <div class="widgets-container">
+                                        <table 
+                                            class="table table-striped table-bordered table-hover dataTables-example"
+                                            style=" font-family: Times New Roman;    font-size: 16px; width: 100%;">
+                                            <thead style="background: #9d8cee;color: white;font-family: raleway">
+                                                <tr>
+                                                    <th>S.no</th>
+                                                    <th>Name</th>
+                                                    <th>Mobile No</th>
+                                                    <th>Email</th>
+                                                    <th>Address</th>
+                                                    <th>Item name</th>
+                                                    <th>Item cost</th>
+                                                    <th>Quantity</th>
+                                                    <th>Date</th>
+                                                    <th>order status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--name	mobileno	gmail	address	item_name	Item_cost	quantity	ord_its	order_status	order_din	 -->
+                                                <tr ng-repeat="ms in getacceptedOrders1 |filter:q">
+                                                    <td class="project-status" style="font-family: raleway">
+                                                        {{$index + 1}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.name}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.mobileno }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.gmail }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.address }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.item_name }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.Item_cost }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.quantity }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.ord_its | date}}</td>
+                                                        <td class="project-title" style="font-family: raleway">
+                                                            accepted</td>
+                                                        
+                                                   
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: 0;
+    }
+
+    .fadeInRight {
+        -webkit-animation-name: fadeInRight;
+        animation-name: auto;
+    }
+
+    .ui-datepicker-trigger {
+        position: absolute;
+        margin-top: -28px;
+        right: 15px;
+        border: none;
+        background-color: transparent;
+    }
+</style>

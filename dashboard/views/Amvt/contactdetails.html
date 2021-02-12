@@ -1,0 +1,107 @@
+<div class="page-container " ng-controller="contactDetailsCtrl">
+
+
+
+
+    <!-- Start page content wrapper -->
+    <div class="page-content-wrapper animated fadeInRight  ">
+        <div class="page-content">
+            <div class="row wrapper border-bottom page-heading">
+                <div class="col-lg-12">
+                    <h2> contact Details</h2>
+                    <ol class="breadcrumb">
+                        <li> <a href="#/dashboard">Orders</a> </li>
+                        <li class="active"> <strong>Get Order Details here</strong> </li>
+                    </ol>
+                </div>
+                <div class="col-lg-12"> </div>
+            </div>
+
+
+
+
+            <div class="widgets-container">
+                <div class="wrapper-content ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content collapse in">
+                                    <div class="widgets-container">
+                                        <table 
+                                            class="table table-striped table-bordered table-hover dataTables-example"
+                                            style=" font-family: Times New Roman;    font-size: 16px; width: 100%;">
+                                            <thead style="background: #9d8cee;color: white;font-family: raleway">
+                                                <tr>
+                                                    <th>S.no</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Message</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="ms in getCntData |filter:q">
+                                                    <td class="project-status" style="font-family: raleway">
+                                                        {{$index + 1}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.cnt_name}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.cnt_email }}</td>
+
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.cnt_msg }}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.cnt_its }}</td>
+                                                    <!-- <td style="font-size: 21px;">
+                                                            <div class="row">
+                                                                <div class="column">
+                                                                    <a href="{{ms.program_img}} "><img src="{{ms.program_img}}"
+                                                                            style="width:40%"></a>
+                                                                </div>
+                                                            </div>
+                                                    </td> -->
+                                                    <!-- <td style="font-family: raleway">
+                                                        <a data-toggle="modal" data-target="#myModal"
+                                                            ng-click="Editprsntdt(ms);">
+                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        </a>&nbsp;&nbsp;&nbsp;
+                                                        <a ng-click="deletprsntst(ms.id);">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </a>
+                                                    </td> -->
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: 0;
+    }
+
+    .fadeInRight {
+        -webkit-animation-name: fadeInRight;
+        animation-name: auto;
+    }
+
+    .ui-datepicker-trigger {
+        position: absolute;
+        margin-top: -28px;
+        right: 15px;
+        border: none;
+        background-color: transparent;
+    }
+</style>

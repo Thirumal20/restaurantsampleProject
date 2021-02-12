@@ -1,0 +1,92 @@
+<!-- Restaurant Menu Section -->
+  <!-- <a href="fillOrderDetails(id:item)">order Now</a> -->
+              <!-- <a ui-sref="fillOrderDetails({'id':item.id})">order Now</a> -->
+<!-- <div ng-controller="restaurantMenuCtrl"> -->
+<div ng-controller="restaurantMenuCtrl" style="background-color:darkgoldenrod;"> 
+  <div id="restaurant-menu">
+    <div class="container">
+      <div class="section-title text-center">
+        <h1>Menu</h1>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="menu-section">
+            <h6 class="menu-section-title">Biryanis</h6>
+            <div class="menu-item" ng-repeat="item in getBiryanis">
+              <div class="menu-item-name">{{item.item_name}}</div>
+              <div class="menu-item-price">Rs: {{item.Item_cost}} </div>
+              <a ui-sref="fillOrderDetails({'id':item.id})"> <button>order now</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="menu-section">
+            <h6 class="menu-section-title">Rice </h6>
+            <div class="menu-item" ng-repeat="item in getRice ">
+              <div class="menu-item-name">{{item.item_name}}</div>
+              <div class="menu-item-price">Rs: {{item.Item_cost}} </div>
+              <a ui-sref="fillOrderDetails({'id':item.id})"> <button>order now</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="menu-section">
+            <h6 class="menu-section-title">IceCreams</h6>
+            <div class="menu-item" ng-repeat="item in getIcecreams ">
+              <div class="menu-item-name">{{item.item_name}}</div>
+              <div class="menu-item-price">Rs: {{item.Item_cost}} </div>
+              <a ui-sref="fillOrderDetails({'id':item.id})"> <button>order now</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="menu-section">
+            <h6 class="menu-section-title">Curries</h6>
+            <div class="menu-item" ng-repeat="item in getCurry ">
+              <div class="menu-item-name">{{item.item_name}}</div>
+              <div class="menu-item-price">Rs: {{item.Item_cost}} </div>
+              <a ui-sref="fillOrderDetails({'id':item.id})"> <button>order now</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- practice coding start -->
+
+<!-- <div  ng-controller="restaurantMenuCtrl">
+  <div id="restaurant-menu">
+    <div class="container">
+      <div class="section-title text-center">
+        <h1>Menu</h1>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="menu-section">
+            <h6 class="menu-section-title">Biryanis</h6>
+            <div class="menu-item" ng-repeat="item in getBiryanis">
+              <div class="menu-item-name">{{item.item_name}}</div>
+              <div class="menu-item-price">Rs: {{item.Item_cost}} </div>
+            
+              <a ui-sref="fillOrderDetails({'id':item.id})">order Now</a>
+
+            </div>
+          </div>
+        </div>
+       
+      </div>
+     
+    </div>
+  </div>
+  
+
+  </div>
+  
+
+
+
+</div> -->

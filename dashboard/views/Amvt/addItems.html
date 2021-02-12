@@ -1,0 +1,183 @@
+<div class="page-container " ng-controller="addItemsCtrl">
+    <!-- Start page content wrapper -->
+    <div class="page-content-wrapper animated fadeInRight  ">
+        <div class="page-content">
+            <div class="row wrapper border-bottom page-heading">
+                <div class="col-lg-12">
+                    <h2>add Items</h2>
+                    <ol class="breadcrumb">
+                        <li> <a href="#/dashboard">add Items</a> </li>
+                        <li class="active"> <strong>Edit addItems page</strong> </li>
+                    </ol>
+                </div>
+                <div class="col-lg-12"> </div>
+            </div>
+            <div class="widgets-container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- FORM START -->
+                        <form name="homeForm">
+                            <fieldset>
+                                <!-- id	item_name	item_HSNcode	item_its	item_qty		 -->
+                                <div class="form-group" style="width:725px;padding-left:200px;">
+                                    <div class="input-group  col-md-5">
+                                        <div class="form-group" style="width: 900px">
+                                            <label class="col-md-2 control-label"> Item Name:
+                                            </label>
+                                            <div class="input-group  col-md-5">
+                                                <input class="form-control" name="fcategory" ng-model="obj.item_name"
+                                                    required type="text" placeholder="Item Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="width:725px;padding-left:200px;">
+                                    <div class="input-group  col-md-5">
+                                        <div class="form-group" style="width: 900px">
+                                            <label class="col-md-2 control-label"> Add item HSN codeo:
+                                            </label>
+                                            <div class="input-group  col-md-5">
+                                                <input class="form-control" name="fcategory" ng-model="obj.item_HSNcode"
+                                                    required type="text" placeholder="Add  item HSN code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                </div>
+                                <div class="form-group col-md-5" style="float: center">
+                                    <div class=" col-sm-6 col-sm-offset-6">
+                                        <button class="btn aqua" type="reset" ng-disabled="homeForm.$invalid"
+                                            ng-click="addItemsData(obj)">Submit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- FORM END -->
+                    </div>
+                </div>
+                <!-- table start -->
+                <div class="wrapper-content ">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content collapse in">
+                                    <div class="widgets-container">
+                                        <table 
+                                            class="table table-striped table-bordered table-hover dataTables-example"
+                                            style=" font-family: Times New Roman;    font-size: 16px; width: 100%;">
+                                            <thead style="background: #9d8cee;color: white;font-family: raleway">
+                                                <tr>
+                                                    <th>S.no</th>
+                                                    <th>Date & Time</th>
+                                                    <th>Item Name</th>
+                                                    <th>Item HSN code</th>
+                                                    <th>Item Quantity</th>
+                                                    <th>Update</th>
+                                                    <TH>Delete</TH>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="ms in addItemsBEData">
+                                                    <td class="project-status" style="font-family: raleway">
+                                                        {{$index + 1}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.item_its}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.item_name}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.item_HSNcode}}</td>
+                                                    <td class="project-title" style="font-family: raleway">
+                                                        {{ms.item_qty}}</td>
+                                                    <td>
+                                                        <a data-toggle="modal" data-target="#myModal" ng-click="editAddItems(ms);">
+                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a ng-click="deleteAddItems(ms.id);">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- table end -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal start -->
+                        <!-- additem_din: 0
+id: 2
+item_HSNcode: "A24"
+item_its: "2021-01-27T09:07:30.000Z"
+item_name: "medicine"
+item_qty: 1 -->
+                        <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-sm" style="width: 700px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label class="col-md-3 control-label">Item Name</label>
+                                        <div class="input-group date form_datetime col-md-6">
+                                            <input type="text" ng-model="Edittm.item_name" class="form-control"
+                                                required />
+                                        </div>
+                                        <br>
+                                        <label class="col-md-3 control-label">Add HSN code</label>
+                                        <div class="input-group date form_datetime col-md-6">
+                                            <input type="text" ng-model="Edittm.item_HSNcode" class="form-control"
+                                                required />
+                                        </div>
+                                        <br>
+                                        <!-- <label class="col-md-3 control-label">Team Image</label>
+                                        <div class="input-group date form_datetime col-md-6">
+                                            <input type="text" ng-model="Edittm.team_img" class="form-control" required />
+                                        </div> -->
+                                        <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn green" data-dismiss="modal"
+                                            ng-click="updatedModalData(Edittm)">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal end -->
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: 0;
+    }
+
+    .fadeInRight {
+        -webkit-animation-name: fadeInRight;
+        animation-name: auto;
+    }
+
+    .ui-datepicker-trigger {
+        position: absolute;
+        margin-top: -28px;
+        right: 15px;
+        border: none;
+        background-color: transparent;
+    }
+</style>

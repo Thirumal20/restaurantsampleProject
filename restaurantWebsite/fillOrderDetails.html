@@ -1,0 +1,130 @@
+
+ <!-- name	mobileno	gmail	address	item_name	Item_cost	quantity	ord_its	order_status	order_din			 -->
+ <!-- form start -->
+  <!-- form end -->
+<div class="container" ng-controller="fillOrderDetailsCtrl">
+    <div class="row" class="mt-5">
+        <div class="col"></div>
+        <div class="col">
+            <div class="text-center"><h1>Fill Order details</h1></div>
+            
+            <form name="homeForm">
+                <fieldset>
+                   
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label"> Enter Name:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="obj.name"
+                                        required type="text" placeholder="Enter Name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label"> Enter Mobile No:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="obj.mobileno"
+                                        required type="number" placeholder=" Enter Mobile No">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label">Enter Gmail:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="obj.gmail"
+                                        required type="gmail" placeholder="Add  Gmail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label">Enter Address:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <textarea class="form-control" name="fcategory"
+                                        ng-model="obj.address" required type="text"
+                                        placeholder="Add  Address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label">Item Name:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="ItemnameFe"
+                                        required type="text" readonly placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label">Item cost:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="itemCostFe"
+                                        required type="text" readonly placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="width:725px;padding-left:200px;">
+                        <div class="input-group  col-md-5">
+                            <div class="form-group" style="width: 900px">
+                                <label class="col-md-2 control-label">Quantity:
+                                </label>
+                                <div class="input-group  col-md-5">
+                                    <input class="form-control" name="fcategory" ng-model="obj.quantity"
+                                        required type="number"  placeholder="Enter Quantity">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                    </div>
+                    <div class="form-group col-md-5" style="float: center">
+                        <div class=" col-sm-6 col-sm-offset-6">
+                            <button class="btn aqua" type="reset" 
+                                ng-click="sentOrderDetails(obj,ItemnameFe,itemCostFe)">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+           
+        </div>
+        <div class="col"></div>
+
+    </div>
+
+</div>
+
+<!-- practice code start -->
+
+<!-- <div class="container" ng-controller="fillOrderDetailsCtrl">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            hi
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+</div> -->
